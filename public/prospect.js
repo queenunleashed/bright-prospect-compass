@@ -25,14 +25,14 @@
   function handleSubmit(e) {
     e.preventDefault();
     const f = e.target;
-    const contractor = f.querySelector('input[type="text"]').value;
+    const company = f.querySelector('input[type="text"]').value;
     const phone = f.querySelector('input[type="tel"]').value;
     const service = f.querySelector('select').value;
     const details = f.querySelector('textarea').value;
 
     const subject = encodeURIComponent('Quote Request — ' + (service || 'General Inquiry'));
     const body = encodeURIComponent(
-      'Contractor / Project: ' + contractor + '\n' +
+      'Company: ' + company + '\n' +
       'Phone: ' + phone + '\n' +
       'Service: ' + (service || 'Not specified') + '\n\n' +
       'Project Details:\n' + details
