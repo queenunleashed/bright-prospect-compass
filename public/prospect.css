@@ -214,6 +214,7 @@
 
   @media (max-width: 1200px) {
     .hero { padding-left: 48px; padding-right: calc(56% + 28px); }
+    .hero h1 { font-size: clamp(2.4rem, 4.4vw, 3.8rem); }
     .stat { padding: 22px 28px; }
     .stat-num { font-size: 2.2rem; }
   }
