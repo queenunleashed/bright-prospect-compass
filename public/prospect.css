@@ -58,15 +58,17 @@
   /* HERO */
   .hero {
     min-height: 100vh; padding-top: 72px;
-    display: flex; flex-direction: column; justify-content: center;
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center; gap: 64px;
     padding-left: 80px; padding-right: 80px;
+    padding-bottom: 180px;
     position: relative; overflow: hidden;
     background: var(--bg);
   }
   .hero-inner { max-width: 680px; }
   .hero-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
   .hero-tag::before { content: ''; display: block; width: 28px; height: 2px; background: var(--orange); }
-  .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 900; line-height: 1.0; color: var(--dark); margin-bottom: 28px; letter-spacing: -0.02em; }
+  .hero h1 { font-size: clamp(2.7rem, 4.8vw, 4.6rem); font-weight: 900; line-height: 1.0; color: var(--dark); margin-bottom: 28px; letter-spacing: -0.02em; }
   .hero h1 span { color: var(--orange); }
   .tagline { font-size: 1.1rem; font-weight: 400; color: var(--mid); margin-bottom: 48px; letter-spacing: 0.01em; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
@@ -75,13 +77,21 @@
   .btn-ghost { color: var(--dark); font-size: 0.9rem; font-weight: 600; text-decoration: none; padding: 16px 0; border-bottom: 2px solid var(--dark); transition: color 0.2s, border-color 0.2s; }
   .btn-ghost:hover { color: var(--orange); border-color: var(--orange); }
 
-  .hero-stats {
-    position: absolute; right: 0; top: 0; bottom: 0; width: 38%;
-    background: #1c1e20;
-    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0;
+  /* HERO PHOTO */
+  .hero-media { position: relative; }
+  .hero-media img {
+    display: block; width: 100%; height: auto; max-height: 66vh; object-fit: cover;
+    border: 1px solid var(--border); background: var(--white);
+    box-shadow: 0 30px 60px -34px rgba(0,0,0,0.45);
   }
-  .stat { width: 100%; padding: 40px 48px; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: left; }
-  .stat:last-child { border-bottom: none; }
+
+  .hero-stats {
+    position: absolute; left: 0; right: 0; bottom: 0; width: 100%;
+    background: #1c1e20;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .stat { width: 100%; padding: 26px 48px; border-right: 1px solid rgba(255,255,255,0.07); text-align: left; }
+  .stat:last-child { border-right: none; }
   .stat-num { font-size: 2.8rem; font-weight: 900; color: #ffffff; line-height: 1; transition: color 0.25s; }
   .stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 6px; }
 
@@ -165,7 +175,7 @@
   /* Dark mode specific overrides */
   /* Hero stats panel — invert to light in dark mode */
   html.dark .hero-stats { background: #e8e4de; }
-  html.dark .stat { border-bottom-color: rgba(0,0,0,0.1); }
+  html.dark .stat { border-right-color: rgba(0,0,0,0.1); }
   html.dark .stat-num { color: #1c1e20; }
   html.dark .stat-label { color: rgba(0,0,0,0.45); }
 
@@ -196,11 +206,31 @@
   html.dark input, html.dark select, html.dark textarea { background: var(--white); border-color: var(--border); color: var(--dark); }
   html.dark input::placeholder, html.dark textarea::placeholder { color: #4a4d52; }
 
+  /* Hero photo in dark mode */
+  html.dark .hero-media img { border-color: var(--border); box-shadow: 0 30px 60px -34px rgba(0,0,0,0.8); }
+
+  @media (max-width: 1200px) {
+    .hero { padding-left: 48px; padding-right: 48px; gap: 40px; }
+    .stat { padding: 22px 28px; }
+    .stat-num { font-size: 2.2rem; }
+  }
+
   @media (max-width: 960px) {
     nav { padding: 0 24px; }
     .nav-links { display: none; }
-    .hero { padding: 100px 28px 60px; min-height: auto; }
-    .hero-stats { display: none; }
+    .hero {
+      grid-template-columns: 1fr; gap: 28px;
+      padding: 88px 28px 44px; min-height: auto;
+    }
+    .hero-media img { max-height: 40vh; }
+    .hero-stats {
+      position: static; grid-column: 1 / -1; width: auto;
+      margin: 8px -28px -44px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat { padding: 16px 14px; }
+    .stat-num { font-size: 1.6rem; }
+    .stat-label { font-size: 0.6rem; letter-spacing: 0.08em; }
     #services, #haul, #why, #contact { padding: 72px 28px; }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .haul-layout { grid-template-columns: 1fr; }
