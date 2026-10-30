@@ -219,13 +219,13 @@
     nav { padding: 0 24px; }
     .nav-links { display: none; }
     .hero {
-      grid-template-columns: 1fr; gap: 32px;
-      padding: 100px 28px 48px; min-height: auto;
+      grid-template-columns: 1fr; gap: 28px;
+      padding: 88px 28px 44px; min-height: auto;
     }
-    .hero-media img { max-height: 46vh; }
+    .hero-media img { max-height: 40vh; }
     .hero-stats {
-      position: static; grid-column: 1 / -1;
-      margin: 8px -28px -48px;
+      position: static; grid-column: 1 / -1; width: auto;
+      margin: 8px -28px -44px;
       grid-template-columns: repeat(3, 1fr);
     }
     .stat { padding: 16px 14px; }
