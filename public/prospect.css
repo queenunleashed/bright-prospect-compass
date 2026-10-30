@@ -220,10 +220,14 @@
     .nav-links { display: none; }
     .hero {
       grid-template-columns: 1fr; gap: 32px;
-      padding: 100px 28px 190px; min-height: auto;
+      padding: 100px 28px 48px; min-height: auto;
     }
     .hero-media img { max-height: 46vh; }
-    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    .hero-stats {
+      position: static; grid-column: 1 / -1;
+      margin: 8px -28px -48px;
+      grid-template-columns: repeat(3, 1fr);
+    }
     .stat { padding: 16px 14px; }
     .stat-num { font-size: 1.6rem; }
     .stat-label { font-size: 0.6rem; letter-spacing: 0.08em; }
