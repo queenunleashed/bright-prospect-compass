@@ -63,4 +63,4 @@
     el.style.transform = 'translateY(18px)';
     el.style.transition = 'opacity 0.45s ease, transform 0.45s ease, border-color 0.2s, background 0.2s';
     observer.observe(el);
-  })();
+  });
