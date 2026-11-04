@@ -1,23 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import truckPhoto from "@/assets/prospect-truck.jpg.asset.json";
-import fleet1 from "@/assets/fleet-peterbilt-12.jpg.asset.json";
-import fleet2 from "@/assets/fleet-kenworth-6.jpg.asset.json";
-import fleet3 from "@/assets/fleet-kenworth-6-front.jpg.asset.json";
-import fleet4 from "@/assets/fleet-cat-roll-off.jpg.asset.json";
-import fleet5 from "@/assets/fleet-peterbilt-8.jpg.asset.json";
-import fleet6 from "@/assets/fleet-quarry-loading.jpg.asset.json";
-import logoMark from "@/assets/prospect-logo-white.png.asset.json";
+import truckPhoto from "@/assets/prospect-truck.jpg";
+import fleet1 from "@/assets/fleet-peterbilt-12.jpg";
+import fleet2 from "@/assets/fleet-kenworth-6.jpg";
+import fleet3 from "@/assets/fleet-kenworth-6-front.jpg";
+import fleet4 from "@/assets/fleet-cat-roll-off.jpg";
+import fleet5 from "@/assets/fleet-peterbilt-8.jpg";
+import fleet6 from "@/assets/fleet-quarry-loading.jpg";
+import logoMark from "@/assets/prospect-logo-white.png";
 
 const SRC: Record<string, string> = {
-  __TRUCK_SRC__: truckPhoto.url,
-  __FLEET_1__: fleet1.url,
-  __FLEET_2__: fleet2.url,
-  __FLEET_3__: fleet3.url,
-  __FLEET_4__: fleet4.url,
-  __FLEET_5__: fleet5.url,
-  __FLEET_6__: fleet6.url,
-  __LOGO_SRC__: logoMark.url,
+  __TRUCK_SRC__: truckPhoto,
+  __FLEET_1__: fleet1,
+  __FLEET_2__: fleet2,
+  __FLEET_3__: fleet3,
+  __FLEET_4__: fleet4,
+  __FLEET_5__: fleet5,
+  __FLEET_6__: fleet6,
+  __LOGO_SRC__: logoMark,
 };
 
 function withSrc(html: string) {
