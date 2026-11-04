@@ -110,6 +110,15 @@
   .svc-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.3; }
   .svc-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
+  /* SECTION CTA — every section points back to the quote form */
+  .section-cta {
+    margin-top: 48px; padding-top: 34px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .section-cta p { font-size: 0.95rem; color: var(--mid); font-weight: 500; max-width: 620px; }
+  .section-cta .btn-primary { padding: 14px 32px; font-size: 0.82rem; white-space: nowrap; }
+
   /* HAUL */
   #haul { padding: 100px 80px; background: var(--bg); }
   .haul-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: var(--border); margin-top: 48px; }
@@ -173,6 +182,15 @@
   .footer-logo-svg svg { height: 90px; width: auto; display: block; margin: 0 auto; }
   .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
   footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+  /* FOOTER CTA */
+  .footer-cta { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 12px; }
+  .footer-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+  .footer-cta a { background: #ffffff; color: #1c1e20; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 30px; text-decoration: none; transition: background 0.2s; }
+  .footer-cta a:hover { background: rgba(255,255,255,0.82); }
+  html.dark .footer-cta p { color: rgba(0,0,0,0.55); }
+  html.dark .footer-cta a { background: #1c1e20; color: #f0ede8; }
+  html.dark .footer-cta a:hover { background: #000000; }
 
 
   /* Dark mode specific overrides */
@@ -241,6 +259,7 @@
     .haul-layout { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .section-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
     .form-row { grid-template-columns: 1fr; }
     footer { padding: 36px 28px; flex-direction: column; text-align: center; }
   }
